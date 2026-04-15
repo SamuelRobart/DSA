@@ -27,6 +27,7 @@ public class ArrayRotation {
         int first = arr[len-1];
         for(int i =len-1;i>0;i--){
             arr[i] = arr[i-1];
+
         }
         arr[0] = first;
         return arr ;
