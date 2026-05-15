@@ -3,33 +3,34 @@ package Strings;
 public class ValidPalindrome {
 
     public static void main(String[] args) {
-        String str="abbda";
+        String str="tab a cat";
 
-        System.out.println(validString(str.toLowerCase()));
+        System.out.println(isValid(str.toLowerCase()));
     }
 
-    public static boolean validString( String str){
+    public static boolean isValid(String str){
 
-        if(str == null)
-            return false;
-
-        int left = 0, right = str.length()-1;
+        int left = 0;
+        int right = str.length()-1;
 
         while(left < right){
 
-            while(left < right && !Character.isLetterOrDigit(str.charAt(left)))
-                left++;
+           while(left < right && !Character.isLetterOrDigit(str.charAt(left)))
+               left++;
 
-            while(left < right && !Character.isLetterOrDigit(str.charAt(right)))
-                right--;
+           while(left < right && !Character.isLetterOrDigit(str.charAt(right)))
+               right--;
 
-            if(Character.toLowerCase(str.charAt(left)) != Character.toLowerCase(str.charAt(right)))
-                return false;
+           if(Character.toLowerCase(str.charAt(left)) != Character.toLowerCase(str.charAt(right))){
+               return false;
+           }
 
-            left ++;
-            right --;
+            left++;
+            right--;
         }
 
         return true;
     }
+
+
 }

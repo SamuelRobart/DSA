@@ -12,30 +12,29 @@ public class ContainerWithMostWater {
 
     public static int containerMostWater(int[] arr){
 
-       int left = 0;
-       int right = arr.length-1;
-       int MaxArea = 0;
+        int left =0;
+        int right = arr.length-1;
+        int maxArea =0;
 
-       while (left < right){
+        while(left < right){
 
-           int h = Math.min(arr[left],arr[right]);
-           int width = right - left;
-           int area =  h * width;
+            int height = Math.min(arr[left],arr[right]);
 
-           MaxArea = Math.max(MaxArea,area);
+            int width = right -left;
 
-           System.out.println(" Height ->  " +h +" Right  -> " +right + " left -> " +left +" Width -> " + width +"  Area -> "+ area +" MaxArea -> " +MaxArea +" ");
+            int area = height * width;
 
+            maxArea = Math.max(maxArea,area);
 
-           if(arr[left] < arr[right]){
-               left++;
-           }else{
-               right --;
-           }
+            if(arr[left] < arr[right]){
+                left++;
+            }else{
+                right--;
+            }
+        }
 
-       }
-
-
-        return MaxArea;
+        return maxArea;
     }
+
+
 }
